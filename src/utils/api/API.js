@@ -36,6 +36,6 @@ export const API = async({ endpoint, method = "GET", body, hasBody = false }) =>
         // Devolver resultado
         return { response };
     } catch (error) {
-        return error;
+        return { error:{ message: error || "Error de conexión" } };
     }
 };
