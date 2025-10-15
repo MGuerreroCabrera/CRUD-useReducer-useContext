@@ -3,7 +3,8 @@ export const GLOBAL_INITIAL_STATE = {
     loading: false,
     error: null,
     opResult: null,
-    totalPages: 0
+    totalPages: 0,
+    isLastPage: false
 };
 
 // Crear el reducer
@@ -21,6 +22,8 @@ export const globalReducer = (state, action) => {
             return { ...state, error: null, opResult: null };
         case "SET_TOTAL_PAGES":
             return { ...state, totalPages: action.payload };
+        case "SET_IS_LAST_PAGE":
+            return { ...state, isLastPage: action.payload };
         default: 
             return state;
     }
