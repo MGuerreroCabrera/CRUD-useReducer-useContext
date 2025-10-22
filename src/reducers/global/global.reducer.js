@@ -3,6 +3,7 @@ export const GLOBAL_INITIAL_STATE = {
     loading: false,
     error: null,
     opResult: null,
+    page: 1,
     totalPages: 0,
     isLastPage: false
 };

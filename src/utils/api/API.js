@@ -9,7 +9,7 @@ export const API = async({ endpoint, method = "GET", body, hasBody = false }) =>
     //     headers["Authorization"] = `Bearer ${localStorage.getItem("hhToken")}`;
     // }
 
-
+// Qué le pasa a este archivo.
     let requestBody = null;
 
     // Manejor del content-type
