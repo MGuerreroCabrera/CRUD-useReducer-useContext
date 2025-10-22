@@ -39,6 +39,10 @@ const ArticleList = () => {
             <p>{article.name}</p>
             <p>{article.description}</p>
             <p>{article.price}€</p>
+            {/* PAGINACIÓN  */}
+            <div className="paginator-container">
+              <button onClick={() => {}}></button>
+            </div>
           </div>
         ))
       ) : (

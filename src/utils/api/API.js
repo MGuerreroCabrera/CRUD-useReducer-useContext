@@ -24,7 +24,7 @@ export const API = async({ endpoint, method = "GET", body, hasBody = false }) =>
     try {
         const res = await fetch(url, {
             method,
-            // headers,
+            //headers,
             body: requestBody
         });
         // Comprobar error
