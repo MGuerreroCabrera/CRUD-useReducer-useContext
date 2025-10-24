@@ -4,10 +4,10 @@ const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 // 2. Función Genérica de conexión a la API
 export const API = async({ endpoint, method = "GET", body, hasBody = false }) => {
     // Para este caso no hacen falta los headers. Únicamente para cuando hay que enviar credenciales.
-    // let headers = {};
-    // if(localStorage.getItem("hhToken")) {
-    //     headers["Authorization"] = `Bearer ${localStorage.getItem("hhToken")}`;
-    // }
+    let headers = {};
+    if(localStorage.getItem("hhToken")) {
+        headers["Authorization"] = `Bearer ${localStorage.getItem("hhToken")}`;
+    }
 
 // Qué le pasa a este archivo.
     let requestBody = null;
@@ -29,7 +29,9 @@ export const API = async({ endpoint, method = "GET", body, hasBody = false }) =>
         });
         // Comprobar error
         if(!res.ok) {
-            return { error: response };
+            // return { error: "response" };
+            console.log("Res: ", res);
+            return { error: res };
         }
         // Parsear resultado a json
         const response = await res.json();

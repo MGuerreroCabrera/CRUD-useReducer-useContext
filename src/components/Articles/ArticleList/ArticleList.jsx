@@ -27,9 +27,10 @@ const ArticleList = () => {
   const { articles } = articleState;
 
   useEffect(() => {
-    fetchArticles(globalDispatch, articlesDispatch);
-  }, []);
+    fetchArticles(globalDispatch, articlesDispatch, page);
+  }, [page]);
 
+  console.log("Page: ", page);
   return (
     <div className="articles-container">
       {loading && <p>Loading....</p>}
@@ -39,22 +40,18 @@ const ArticleList = () => {
             <p>{article.name}</p>
             <p>{article.description}</p>
             <p>{article.price}€</p>
-            {/* PAGINACIÓN  */}
-            <div className="paginator-container">
-              <button onClick={() => globalDispatch({ type: "SUM_PAGE" })}>
-                +
-              </button>
-              <button
-                onClick={() => globalDispatch({ type: "SUBSTRACT_PAGE" })}
-              >
-                -
-              </button>
-            </div>
           </div>
         ))
       ) : (
         <p>No hay artículos para mostrar</p>
       )}
+      {/* PAGINACIÓN  */}
+      <div className="paginator-container">
+        <button onClick={() => globalDispatch({ type: "SUM_PAGE" })}>+</button>
+        <button onClick={() => globalDispatch({ type: "SUBSTRACT_PAGE" })}>
+          -
+        </button>
+      </div>
     </div>
   );
 };

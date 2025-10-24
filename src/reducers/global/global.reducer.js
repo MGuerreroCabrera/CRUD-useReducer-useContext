@@ -22,12 +22,14 @@ export const globalReducer = (state, action) => {
         case "CLEAR_NOTIFICATION":
             return { ...state, error: null, opResult: null };
         case "SUM_PAGE":
-            return { ...state, page:  }
+            return { ...state, page: state.page + 1  };
+        case "SUBSTRACT_PAGE":
+            return { ...state, page: state.page - 1  };
         case "SET_TOTAL_PAGES":
             return { ...state, totalPages: action.payload };
         case "SET_IS_LAST_PAGE":
             return { ...state, isLastPage: action.payload };
         default: 
-            return state;
+            return { ...state };
     }
 }
