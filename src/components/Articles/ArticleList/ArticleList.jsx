@@ -41,7 +41,14 @@ const ArticleList = () => {
             <p>{article.price}€</p>
             {/* PAGINACIÓN  */}
             <div className="paginator-container">
-              <button onClick={() => {}}></button>
+              <button onClick={() => globalDispatch({ type: "SUM_PAGE" })}>
+                +
+              </button>
+              <button
+                onClick={() => globalDispatch({ type: "SUBSTRACT_PAGE" })}
+              >
+                -
+              </button>
             </div>
           </div>
         ))

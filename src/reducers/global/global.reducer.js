@@ -21,6 +21,8 @@ export const globalReducer = (state, action) => {
             return { ...state, opResult: action.payload, error: null };
         case "CLEAR_NOTIFICATION":
             return { ...state, error: null, opResult: null };
+        case "SUM_PAGE":
+            return { ...state, page:  }
         case "SET_TOTAL_PAGES":
             return { ...state, totalPages: action.payload };
         case "SET_IS_LAST_PAGE":
